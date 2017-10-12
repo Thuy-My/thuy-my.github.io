@@ -5,7 +5,8 @@ const {username, token} = require('../github-credential.json');
 getAllReposOfUser('zhaar');
 
 function buttonClicked() {
-    alert('Button clicked!');
+    //alert('Button clicked!');
+    document.getElementById("userStats").innerHTML = "helloooo";
 }
 
 /* Function to get all (public) repositories' name of a given user */
