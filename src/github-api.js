@@ -2,20 +2,16 @@ const fs = require('fs');
 const request = require('superagent');
 const {username, token} = require('../github-credential.json');
 
-getAllReposOfUser('zhaar');
-
-function buttonClicked() {
-    //alert('Button clicked!');
-    document.getElementById("userStats").innerHTML = "helloooo";
-}
+getAllReposOfUser('zhaar', (result) => {
+    return result;
+});
 
 /* Function to get all (public) repositories' name of a given user */
-function getAllReposOfUser(owner) { // RENAME -> GETSTATSOFUSER?
+function getAllReposOfUser(owner, func) { // RENAME -> GETSTATSOFUSER?
 
     const url = `https://api.github.com/users/${owner}/repos`;
 
-    /*  Request to get all the given user's repos' name */
-    request
+    request /*  Request to get all the given user's repos' name */
         .get(url)
         .auth(username, token)
         .set('Accept', 'application/vnd.github.v3+json')
@@ -37,17 +33,22 @@ function getAllReposOfUser(owner) { // RENAME -> GETSTATSOFUSER?
                     
                     if(Object.keys(allCommitObjs).length == result.length) {
                         // Sort the repositories by their number of commits to obtain a "Most active on (...) repositories" ranking                    
-                        sortReposByCommitsNumber(allCommitObjs);
+                        sortReposByCommitsNumber(allCommitObjs, (sorted) => {
+                            //console.log(sorted);       
+                            func(sorted);                 
+                        }); 
                     }
 
                 });
 
                 // Get all the languages used for that repository along with their number of occurrences
-                getRepoLanguages(url_languages, (languages) => {
-                    console.log(languages);
+                getRepoLanguages(url_languages, (languages) => {    // Move it elsewhere?
+                    //console.log(languages);
                 });
             }
-        }); 
+
+            //func(allCommitObjs);
+    });
 }
 
 /* Function to get the number of commits*/
@@ -94,7 +95,7 @@ function getRepoLanguages(url, func) {
     });
 }
 
-function sortReposByCommitsNumber(commitsObj) {
+function sortReposByCommitsNumber(commitsObj, func) {
     var sorted = [];
 
     for(var repo in commitsObj) {
@@ -103,6 +104,7 @@ function sortReposByCommitsNumber(commitsObj) {
 
     sorted.sort((x, y) => y[1] - x[1]);
 
+    func(sorted);
     //console.log(sorted);
 
 }
