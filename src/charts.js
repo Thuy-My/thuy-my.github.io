@@ -3,6 +3,8 @@ const githubApi = require('./github-api');
 
 function usernameClicked(username) {
     drawMostActiveRepoChart(username);
+    
+    return false;
 }
 
 function drawMostActiveRepoChart(username) {
