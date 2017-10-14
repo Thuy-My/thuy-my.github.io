@@ -1,9 +1,8 @@
 const chart = require('chart.js');
 const githubApi = require('./github-api');
 
-function buttonClicked() {
-    console.log("I here");
-    drawMostActiveRepoChart(document.getElementById("username").value);
+function usernameClicked(username) {
+    drawMostActiveRepoChart(username);
 }
 
 function drawMostActiveRepoChart(username) {
