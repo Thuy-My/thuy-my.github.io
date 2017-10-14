@@ -15,7 +15,7 @@
 		<!-- Custom styles for this template -->
 		<link href="css/one-page-wonder.css" rel="stylesheet">
 		
-		<!-- Script to use when button is clicked -->
+		<!-- Script to use when username is clicked -->
 		<script src="/src/charts.js"></script>
 	</head>
 	
@@ -63,12 +63,14 @@
         <div class="row align-items-center">
           <!--<div class="col-md-6">-->
             <div class="p-5">
-              <h3 class="display-4">Analyze a user</h2> <br>
-              <p>Enter the username of the user you'd want to get analyzes from:</p>
-				<p><input type="text" name="username" id="username"></br>
+              <h2 class="display-4">Analyze a user</h2> <br>
+              <p>Click on the username of the user you'd want to get analyzes from:</p>
+				<a href="application.php" onclick="usernameClicked('zhaar'); return false;">zhaar</a> 
+				<canvas id="userStats" width="400" height="400"></canvas>
+				<!--<p><input type="text" name="username" id="username"></br>
 				<button onclick="javascript:buttonClicked();">Send!</button></br>
 				<div id="userStats">Test2</div>
-				<!--<input type="text" name="value" id="userStats">-->
+				<input type="text" name="value" id="userStats">-->
 				</p>
             </div>
           <!--</div>-->
