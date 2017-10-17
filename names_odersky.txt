@@ -1,0 +1,1 @@
+scalax,sips,scala.github.com,scala-dist,legacy-svn-scala,collection-strawman,dotty,scala-lang,scala

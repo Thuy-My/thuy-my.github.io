@@ -4,38 +4,39 @@ const githubApi = require('./github-api.js');
 
 //module.exports = methods;
 
-//usernameClicked('zhaar', (result) => {console.log(result)});
-
 /* Function called when a username has been clicked */
 function usernameClicked(username) {
-    console.log("0 hello");
-    //document.getElementById("test").innerHTML = "clicked";
     return drawMostActiveRepoChart(username);    
 }
 
 /* Draw the chart showing the repos' activity */ 
 function drawMostActiveRepoChart(username) {    
-    console.log("1 hello");
-    let ctx = document.getElementById("myChart").getContext('2d');
+    let ctx = document.getElementById("activityChart").getContext('2d');
     
-    let url = "http://localhost:4000/names.txt";
-    let url2 = "http://localhost:4000/values.txt";
+    //let url = "https://thuy-my.github.io/names_" + username +".txt";
+    //let url2 = "https://thuy-my.github.io/values_" + username + ".txt";
+
+    let url = "http://localhost:4000/names_" + username +".txt";
+    let url2 = "http://localhost:4000/values_" + username + ".txt";
+
+    console.log("Files names are : " + url + " and " + url2);
 
     let namesData;
     let valuesData;
 
     getFile(url, (namesData) => {
         getFile(url2, (valuesData) => {
+            console.log("Drawing chart...");
             drawBarChart(namesData, valuesData, ctx);
         })
     });
     
     /*githubApi.getAllReposOfUser(username, (result) => {
         names = [];
-        values = [];*/
+        values = [];
         //document.getElementById("test3").innerHTML = "clicked";
         
-        /*result.forEach(function(element) {
+        result.forEach(function(element) {
             let elem = element + '';
 
             let split = elem.split(',');
@@ -48,7 +49,7 @@ function drawMostActiveRepoChart(username) {
             console.log(i + " : " + names[i] + " = " + values[i]);
         }
 
-        fs.writeFile("names.txt", names, function(err) {
+        fs.writeFile("names_" + username + ".txt", names, function(err) {
             if(err) {
                 return console.log(err);
             }
@@ -56,21 +57,15 @@ function drawMostActiveRepoChart(username) {
             console.log("Names was saved!");
         }); 
 
-        fs.writeFile("values.txt", values, function(err) {
+        fs.writeFile("values_" + username + ".txt", values, function(err) {
             if(err) {
                 return console.log(err);
             }
         
             console.log("Values was saved!");
-        }); */
+        }); 
 
-        /*const ctx = document.getElementById("userStats");
-
-        const barChart = new Chart(ctx, {
-            type: 'horizontalBar',
-            data: result
-        });*/
-        /*return names;
+        return names;
     });*/
 
     return false;
@@ -78,12 +73,13 @@ function drawMostActiveRepoChart(username) {
 
 /* Function to read a given data file */
 function getFile(url, func) {
+    console.log("Reading file...");
     let namesFile = new XMLHttpRequest();
 
     namesFile.onreadystatechange = function() {
         if(namesFile.readyState == 4) {  
             if(namesFile.status == 200) {   // Success
-
+                console.log("Read file!");
                 func(namesFile.responseText);
             
             } else {    // Fail
@@ -100,7 +96,7 @@ function getFile(url, func) {
 
 /* Function to draw a bar chart */
 function drawBarChart(labelsFile, valuesFile, ctx) {
-    
+    console.log("Drawing bar chart!");
     if(!labelsFile) {
         return;
     }
