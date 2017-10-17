@@ -1,6 +1,8 @@
 //const chart = require('chart.js');
 //const fs = require('fs');
-const githubApi = require('./github-api.js');
+//const githubApi = require('./github-api.js');
+
+let currChart = null;
 
 /*module.exports = methods;
 
@@ -24,7 +26,9 @@ function usernameClicked(username) {
 function drawMostActiveRepoChart(username) {    
     let ctx = document.getElementById("activityChart").getContext('2d');
 
-    clearCanvas(ctx);
+    if(currChart != null) {
+        currChart.destroy();
+    }
 
     let url = "https://thuy-my.github.io/names_" + username +".txt";
     let url2 = "https://thuy-my.github.io/values_" + username + ".txt";
@@ -143,7 +147,7 @@ function getFile(url, func) {
 
 /* Function to draw a bar chart */
 function drawBarChart(labelsFile, valuesFile, ctx) {
-    console.log("Drawing bar chart!");
+    
     if(!labelsFile) {
         return;
     }
@@ -187,6 +191,8 @@ function drawBarChart(labelsFile, valuesFile, ctx) {
             }
         }
     });
+
+    currChart = barChart;
 
     //setTimeout(() => barChart.destroy(), 1000);
 }
