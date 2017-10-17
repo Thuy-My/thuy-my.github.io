@@ -17,6 +17,9 @@
 		
 		<!-- Script to use when username is clicked -->
 		<script src="/src/charts.js"></script>
+		<script src="/src/github-api.js"></script>
+		<!-- Script to be able to use Chart.js without Node -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script> 
 	</head>
 	
 	<body>
@@ -65,10 +68,11 @@
             <div class="p-5">
               <h2 class="display-4">Analyze a user</h2> <br>
               <p>Click on the username of the user you'd want to get analyzes from:</p>
-				<a href="usernameClicked('zhaar')">zhaar</a><br>
-				<div id="test">Test</div><br>
+				<a href="#" onclick="javascript:usernameClicked('zhaar');">zhaar</a><br>
+				<div id="test">Teeeest</div><br>
 				<div id="test2">Test2</div><br>
-				<canvas id="userStats" width="400" height="400"></canvas>
+				<div id="test3">Test3</div><br>
+				<canvas id="myChart" width="400" height="400"></canvas>
 				<!--<p><input type="text" name="username" id="username"></br>
 				<button onclick="javascript:buttonClicked();">Send!</button></br>
 				<div id="userStats">Test2</div>

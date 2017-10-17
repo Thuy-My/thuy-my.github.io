@@ -2,9 +2,11 @@ const fs = require('fs');
 const request = require('superagent');
 const {username, token} = require('../github-credential.json');
 
-getAllReposOfUser('zhaar', (result) => {
+/*getAllReposOfUser('zhaar', (result) => {
     return result;
-});
+});*/
+
+//module.exports = methods = {};
 
 /* Function to get all (public) repositories' name of a given user */
 function getAllReposOfUser(owner, func) { // RENAME -> GETSTATSOFUSER?
@@ -17,7 +19,7 @@ function getAllReposOfUser(owner, func) { // RENAME -> GETSTATSOFUSER?
         .set('Accept', 'application/vnd.github.v3+json')
         .end((err, res) => {
 
-            let allCommitObjs = {};
+            let allCommitObjs = {}; 
             let result = JSON.parse(res.text);
 
             for(let i in result) {
@@ -108,3 +110,5 @@ function sortReposByCommitsNumber(commitsObj, func) {
     //console.log(sorted);
 
 }
+
+console.log("github-api.js");
