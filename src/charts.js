@@ -33,11 +33,11 @@ function drawMostActiveRepoChart(username) {
         currChart.destroy();
     }
 
-    //let url = "https://thuy-my.github.io/data/names_" + username +".txt";
-    //let url2 = "https://thuy-my.github.io/data/values_" + username + ".txt";
+    let url = "https://thuy-my.github.io/data/names_" + username +".txt";
+    let url2 = "https://thuy-my.github.io/data/values_" + username + ".txt";
 
-    let url = "http://localhost:4000/data/names_" + username +".txt";
-    let url2 = "http://localhost:4000/data/values_" + username + ".txt";
+    //let url = "http://localhost:4000/data/names_" + username +".txt";
+    //let url2 = "http://localhost:4000/data/values_" + username + ".txt";
 
     let namesData;
     let valuesData;
