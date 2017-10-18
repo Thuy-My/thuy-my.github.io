@@ -19,6 +19,8 @@ usernameClicked('XTBoris', (result) => {console.log(result)});*/
 
 /* Function called when a username has been clicked */
 function usernameClicked(username) {
+    document.getElementById("chosenUser").innerHTML = username;
+
     return drawMostActiveRepoChart(username);    
 }
 
@@ -26,105 +28,31 @@ function usernameClicked(username) {
 function drawMostActiveRepoChart(username) {    
     let ctx = document.getElementById("activityChart").getContext('2d');
 
+    /* Destroy the current drawn chart to avoid overlapping */
     if(currChart != null) {
         currChart.destroy();
     }
 
-    let url = "https://thuy-my.github.io/names_" + username +".txt";
-    let url2 = "https://thuy-my.github.io/values_" + username + ".txt";
+    //let url = "https://thuy-my.github.io/data/names_" + username +".txt";
+    //let url2 = "https://thuy-my.github.io/data/values_" + username + ".txt";
 
-    //let url = "http://localhost:4000/names_" + username +".txt";
-    //let url2 = "http://localhost:4000/values_" + username + ".txt";
-
-    console.log("Files names are : " + url + " and " + url2);
+    let url = "http://localhost:4000/data/names_" + username +".txt";
+    let url2 = "http://localhost:4000/data/values_" + username + ".txt";
 
     let namesData;
     let valuesData;
 
     getFile(url, (namesData) => {
         getFile(url2, (valuesData) => {
-            console.log("Drawing chart...");
             drawBarChart(namesData, valuesData, ctx);
         })
     });
     
-    //githubApi.getAllReposOfUser(username, (result) => {
-        /*names = [];
-        values = [];
-        //document.getElementById("test3").innerHTML = "clicked";
-        
-        result.forEach(function(element) {
-            let elem = element + '';
-
-            let split = elem.split(',');
-
-            names.push(split[0]);
-            values.push(split[1]);
-        }, this);
-
-        for(let i = 0; i < result.length; i++) {
-            console.log(i + " : " + names[i] + " = " + values[i]);
-        }
-
-        fs.writeFile("names_" + username + ".txt", names, function(err) {
-            if(err) {
-                return console.log(err);
-            }
-        
-            console.log("Names was saved!");
-        }); 
-
-        fs.writeFile("values_" + username + ".txt", values, function(err) {
-            if(err) {
-                return console.log(err);
-            }
-        
-            console.log("Values was saved!");
-        }); 
-
-        return names;*/
-    /*}, (result2) => {
-        languages = [];
-        values = [];
-        
-        result.forEach(function(element) {
-            let elem = element + '';
-
-            let split = elem.split(',');
-
-            names.push(split[0]);
-            values.push(split[1]);
-        }, this);
-
-        for(let i = 0; i < result.length; i++) {
-            console.log(i + " : " + names[i] + " = " + values[i]);
-        }
-
-        fs.writeFile("names_" + username + ".txt", names, function(err) {
-            if(err) {
-                return console.log(err);
-            }
-        
-            console.log("Names was saved!");
-        }); 
-
-        fs.writeFile("values_" + username + ".txt", values, function(err) {
-            if(err) {
-                return console.log(err);
-            }
-        
-            console.log("Values was saved!");
-        }); 
-
-        return names;
-    });
-
-    return false;*/
+    
 }
 
 /* Function to read a given data file */
 function getFile(url, func) {
-    console.log("Reading file...");
     let namesFile = new XMLHttpRequest();
 
     namesFile.onreadystatechange = function() {
@@ -193,13 +121,4 @@ function drawBarChart(labelsFile, valuesFile, ctx) {
     });
 
     currChart = barChart;
-
-    //setTimeout(() => barChart.destroy(), 1000);
-}
-
-function clearCanvas(ctx) {
-    ctx.save();
-    ctx.setTransform(1, 0, 0, 1, 0, 0);
-    ctx.clearRect(0, 0, ctx.width, ctx.height);
-    ctx.restore();
 }
