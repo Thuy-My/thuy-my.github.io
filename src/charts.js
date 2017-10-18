@@ -1,27 +1,20 @@
-//const chart = require('chart.js');
-//const fs = require('fs');
-//const githubApi = require('./github-api.js');
-
-let currChart = null;
-
-/*module.exports = methods;
-
-usernameClicked('zhaar', (result) => {console.log(result)});
-usernameClicked('Thuy-My', (result) => {console.log(result)});
-usernameClicked('Roldak', (result) => {console.log(result)});
-usernameClicked('sydneyhauke', (result) => {console.log(result)});
-usernameClicked('FredericJacobs', (result) => {console.log(result)});
-usernameClicked('wasadigi', (result) => {console.log(result)});
-usernameClicked('odersky', (result) => {console.log(result)});
-usernameClicked('ounon', (result) => {console.log(result)});
-usernameClicked('dbnsky', (result) => {console.log(result)});
-usernameClicked('XTBoris', (result) => {console.log(result)});*/
+let currChart;
+let currChart2;
+let firstClick = true;
 
 /* Function called when a username has been clicked */
 function usernameClicked(username) {
     document.getElementById("chosenUser").innerHTML = username;
 
-    return drawMostActiveRepoChart(username);    
+    /*if(firstClick) {
+        currChart = null;
+        firstClick = false;
+    }*/
+
+    drawMostActiveRepoChart(username);    
+    drawLanguagesChart(username);
+
+    return false;
 }
 
 /* Draw the chart showing the repos' activity */ 
@@ -31,6 +24,8 @@ function drawMostActiveRepoChart(username) {
     /* Destroy the current drawn chart to avoid overlapping */
     if(currChart != null) {
         currChart.destroy();
+    } else if(currChart2 != null) {
+        currChart2.destroy();
     }
 
     let url = "https://thuy-my.github.io/data/names_" + username +".txt";
@@ -44,37 +39,40 @@ function drawMostActiveRepoChart(username) {
 
     getFile(url, (namesData) => {
         getFile(url2, (valuesData) => {
-            drawBarChart(namesData, valuesData, ctx);
+            drawBarChart(namesData, valuesData, '# Activities per repository', ctx);
         })
     });
-    
-    
 }
 
-/* Function to read a given data file */
-function getFile(url, func) {
-    let namesFile = new XMLHttpRequest();
+function drawLanguagesChart(username) {
+    let ctx = document.getElementById("languagesChart").getContext('2d');
 
-    namesFile.onreadystatechange = function() {
-        if(namesFile.readyState == 4) {  
-            if(namesFile.status == 200) {   // Success
-                console.log("Read file!");
-                func(namesFile.responseText);
-            
-            } else {    // Fail
+    /* Destroy the current drawn chart to avoid overlapping */
+    if(currChart != null) {
+        currChart.destroy();
+    } else if(currChart2 != null) {
+        currChart2.destroy();
+    }
 
-                func(null);
-            
-            }
-        }
-    };
+    let url = "https://thuy-my.github.io/data/languages_" + username +".txt";
+    let url2 = "https://thuy-my.github.io/data/languagesValues_" + username + ".txt";
 
-    namesFile.open("GET", url);
-    namesFile.send();
+    //let url = "http://localhost:4000/data/languages_" + username +".txt";
+    //let url2 = "http://localhost:4000/data/languagesValues_" + username + ".txt";
+
+    let languagesData;
+    let valuesData;
+
+    getFile(url, (languagesData) => {
+        getFile(url2, (valuesData) => {
+            drawBarChart(languagesData, valuesData, '# Programming language occurences over all repositories', ctx);
+        })
+    });
+
 }
 
 /* Function to draw a bar chart */
-function drawBarChart(labelsFile, valuesFile, ctx) {
+function drawBarChart(labelsFile, valuesFile, label, ctx) {
     
     if(!labelsFile) {
         return;
@@ -102,7 +100,7 @@ function drawBarChart(labelsFile, valuesFile, ctx) {
         data: {
             labels: labels,
             datasets: [{
-                label: '# Activities per repository',
+                label: label,
                 data: values,
                 backgroundColor: bgColor,
                 borderColor: bColor,
@@ -120,5 +118,32 @@ function drawBarChart(labelsFile, valuesFile, ctx) {
         }
     });
 
-    currChart = barChart;
+    if(ctx == document.getElementById("activityChart").getContext('2d')) {
+        currChart = barChart;
+    } else if (ctx == document.getElementById("activityChart").getContext('2d')) {
+        currChart2 = barChart;
+    }
+}
+
+
+/* Function to read a given data file */
+function getFile(url, func) {
+    let namesFile = new XMLHttpRequest();
+
+    namesFile.onreadystatechange = function() {
+        if(namesFile.readyState == 4) {  
+            if(namesFile.status == 200) {   // Success
+                console.log("Read file!");
+                func(namesFile.responseText);
+            
+            } else {    // Fail
+
+                func(null);
+            
+            }
+        }
+    };
+
+    namesFile.open("GET", url);
+    namesFile.send();
 }
