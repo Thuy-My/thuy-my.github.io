@@ -1,0 +1,19 @@
+.sticky {
+  padding: 20px;
+  width: 190px;
+  background-color: #434A54;
+  color: #fff;
+}
+.sticky h3 {
+  margin: 0;
+}
+.content,
+.sticky {
+  float: left;
+}
+
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 70px;
+}
