@@ -66,12 +66,8 @@
     </header>
 
     <section>
-      <div class="container">
-        <div class="text">
-            <div class="p-5">
-				<h2 class="display-4">Analyze a user</h2> <br>
-				<p>Click on your target:</p>
-				<div class="sticky">
+	<div class="sticky">
+					<p>Click on your target:</p>
 					<a href="javascript:void(0);" onclick="javascript:usernameClicked('zhaar');">zhaar</a><br>
 					<a href="javascript:void(0);" onclick="javascript:usernameClicked('Thuy-My');">Thuy-My</a><br>
 					<a href="javascript:void(0);" onclick="javascript:usernameClicked('Roldak');">Roldak</a><br>
@@ -83,17 +79,21 @@
 					<a href="javascript:void(0);" onclick="javascript:usernameClicked('odersky');">odersky</a><br>
 					<a href="javascript:void(0);" onclick="javascript:usernameClicked('XTBoris');">XTBoris</a><br><br>
 				</div>
+      <div class="container">
+        <div class="text">
+            <div class="p-5">
+				<h2 class="display-4">Analyze a user</h2> <br>
+				<!-- code was here -->
 					<div class="text"align="center" style="color:#792323"">
 						<tt>You chose to go over <br>
 						<div class = "p-5" id="chosenUser" style="font-size:180%;color:#56648C"></div><br>
 						with a fine-tooth comb! Here are the result :</tt><br><br><br>
 			</div>
 					
-					<canvas id="activityChart" width="700" height="700" align="center"></canvas>
+					<canvas id="activityChart" width="500" height="500" align="center"></canvas>
 					<canvas id="languagesChart" width="700" height="700"></canvas>
-            </div>
-        </div>
-      </div>
+		</div>
+	</div>
     </section>
 
     <!-- Footer -->
