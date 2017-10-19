@@ -6,11 +6,6 @@ let firstClick = true;
 function usernameClicked(username) {
     document.getElementById("chosenUser").innerHTML = username;
 
-    /*if(firstClick) {
-        currChart = null;
-        firstClick = false;
-    }*/
-
     drawMostActiveRepoChart(username);    
     drawLanguagesChart(username);
 
@@ -28,18 +23,18 @@ function drawMostActiveRepoChart(username) {
         currChart2.destroy();
     }
 
-    let url = "https://thuy-my.github.io/data/names_" + username +".txt";
-    let url2 = "https://thuy-my.github.io/data/values_" + username + ".txt";
+    //let url = "https://thuy-my.github.io/data/names_" + username +".txt";
+    //let url2 = "https://thuy-my.github.io/data/values_" + username + ".txt";
 
-    //let url = "http://localhost:4000/data/names_" + username +".txt";
-    //let url2 = "http://localhost:4000/data/values_" + username + ".txt";
+    let url = "http://localhost:4000/data/names_" + username +".txt";
+    let url2 = "http://localhost:4000/data/values_" + username + ".txt";
 
     let namesData;
     let valuesData;
 
     getFile(url, (namesData) => {
         getFile(url2, (valuesData) => {
-            drawBarChart(namesData, valuesData, '# Activities per repository', ctx);
+            drawBarChart(namesData, valuesData, '# Activities per repository', ctx, "activityChart");
         })
     });
 }
@@ -50,29 +45,30 @@ function drawLanguagesChart(username) {
     /* Destroy the current drawn chart to avoid overlapping */
     if(currChart != null) {
         currChart.destroy();
-    } else if(currChart2 != null) {
+    } 
+    if(currChart2 != null) {
         currChart2.destroy();
     }
 
-    let url = "https://thuy-my.github.io/data/languages_" + username +".txt";
-    let url2 = "https://thuy-my.github.io/data/languagesValues_" + username + ".txt";
+    //let url = "https://thuy-my.github.io/data/languages_" + username +".txt";
+    //let url2 = "https://thuy-my.github.io/data/languagesValues_" + username + ".txt";
 
-    //let url = "http://localhost:4000/data/languages_" + username +".txt";
-    //let url2 = "http://localhost:4000/data/languagesValues_" + username + ".txt";
+    let url = "http://localhost:4000/data/languages_" + username +".txt";
+    let url2 = "http://localhost:4000/data/languagesValues_" + username + ".txt";
 
     let languagesData;
     let valuesData;
 
     getFile(url, (languagesData) => {
         getFile(url2, (valuesData) => {
-            drawBarChart(languagesData, valuesData, '# Programming language occurences over all repositories', ctx);
+            drawDoughnutChart(languagesData, valuesData, '# Programming language occurences over all repositories', ctx, "languagesChart");
         })
     });
 
 }
 
 /* Function to draw a bar chart */
-function drawBarChart(labelsFile, valuesFile, label, ctx) {
+function drawBarChart(labelsFile, valuesFile, label, ctx, canvasName) {
     
     if(!labelsFile) {
         return;
@@ -118,13 +114,60 @@ function drawBarChart(labelsFile, valuesFile, label, ctx) {
         }
     });
 
-    if(ctx == document.getElementById("activityChart").getContext('2d')) {
+    if(canvasName == "activityChart") {
         currChart = barChart;
-    } else if (ctx == document.getElementById("activityChart").getContext('2d')) {
+    } else if (canvasName == "languagesChart") {
         currChart2 = barChart;
     }
 }
 
+function drawDoughnutChart(labelsFile, valuesFile, label, ctx, canvasName) {
+
+    if(!labelsFile) {
+        return;
+    }
+
+    let labels = labelsFile.split(',');
+    let values = valuesFile.split(',');
+
+    let bgColor = [];
+    let bColor = [];
+
+    /* Random background colors for the bars */
+    for(let i = 0; i < labels.length; i++) {
+        let r = Math.floor(Math.random() * 255) + 1;
+        let g = Math.floor(Math.random() * 255) + 1;
+        let b = Math.floor(Math.random() * 255) + 1;
+
+        bgColor.push('rgba(' + r + ", " + g + ", " + b + ", 0.2");
+        bColor.push('rgba(' + r + ", " + g + ", " + b + ", 1");
+    }
+
+    let doughnutChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: label,
+                data: values,
+                backgroundColor: bgColor,
+                borderColor: bColor,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            animation : {
+                animateScale : true
+            }
+        }
+    });
+
+    if(canvasName == "activityChart") {
+        currChart = doughnutChart;
+    } else if (canvasName == "languagesChart") {
+        currChart2 = doughnutChart;
+    }
+}
 
 /* Function to read a given data file */
 function getFile(url, func) {
@@ -133,7 +176,6 @@ function getFile(url, func) {
     namesFile.onreadystatechange = function() {
         if(namesFile.readyState == 4) {  
             if(namesFile.status == 200) {   // Success
-                console.log("Read file!");
                 func(namesFile.responseText);
             
             } else {    // Fail
