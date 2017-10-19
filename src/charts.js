@@ -6,8 +6,10 @@ let firstClick = true;
 function usernameClicked(username) {
     document.getElementById("chosenUser").innerHTML = username;
 
-    let elements = document.querySelectorAll('.sticky');
-    Stickyfill.add(elements);
+    /*let elements = document.querySelectorAll('.sticky');
+    Stickyfill.add(elements);*/
+
+    document.getElementById("fineToothComb").style.display = "block";
 
     drawMostActiveRepoChart(username);    
     drawLanguagesChart(username);
