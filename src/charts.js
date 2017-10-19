@@ -100,6 +100,7 @@ function drawBarChart(labelsFile, valuesFile, label, ctx, canvasName) {
                 data: values,
                 backgroundColor: bgColor,
                 borderColor: bColor,
+                hoverBackgroundColor : bColor,
                 borderWidth: 1
             }]
         },
@@ -152,12 +153,13 @@ function drawDoughnutChart(labelsFile, valuesFile, label, ctx, canvasName) {
                 data: values,
                 backgroundColor: bgColor,
                 borderColor: bColor,
+                hoverBackgroundColor : bColor,
                 borderWidth: 1
             }]
         },
         options: {
             animation : {
-                animateScale : true
+                animateScale : true,
             }
         }
     });
