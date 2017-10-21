@@ -7,6 +7,8 @@ function usernameClicked(username) {
     document.getElementById("chosenUser").innerHTML = username;
 
     document.getElementById("fineToothComb").style.display = "block";
+    document.getElementById("sticky2").style.display = "block";
+    document.getElementById("sticky3").style.display = "block";
 
     drawMostActiveRepoChart(username);    
     drawLanguagesChart(username);
