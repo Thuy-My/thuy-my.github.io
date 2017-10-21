@@ -1,1 +1,1 @@
-Scala,Java,Python,JavaScript,CSS,HTML,Shell,Batchfile,Ruby,C,Perl,PHP
+Java,Python,JavaScript,CSS,HTML,Shell,Scala,Batchfile,Ruby,SuperCollider,C,Perl,PHP
