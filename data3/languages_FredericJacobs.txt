@@ -1,1 +1,1 @@
-Objective-C,C,Ruby,C++
+VHDL,Objective-C,C,C++,Tcl,Assembly,Ruby,JavaScript,Scilab,Matlab,Shell,Perl,Standard ML,Nu
