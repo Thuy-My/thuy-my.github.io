@@ -1,1 +1,1 @@
-VHDL,Java,C++,Tcl,Groovy,Go,Swift,Assembly,C,Objective-C,JavaScript,CSS,TeX,Scilab,Matlab,Perl,Shell,Makefile,HCL,Ruby,Standard ML,Batchfile,Nu
+VHDL,Java,C++,Tcl,Groovy,Go,Swift,Assembly,C,Objective-C,JavaScript,TeX,CSS,Scilab,Matlab,Perl,Shell,Makefile,HTML,HCL,Ruby,Standard ML,Batchfile,Nu
