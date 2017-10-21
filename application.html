@@ -15,7 +15,7 @@
 		<!-- Custom styles for this template -->
 		<link href="css/one-page-wonder.css" rel="stylesheet">
 		<link href="vendor/bootstrap/css/sticky.css" rel="stylesheet">
-		
+		<link href="css/columns.css" rel="stylesheet">
 		
 	</head>
 	
@@ -59,41 +59,66 @@
     </header>
 
     <section>
-	<div class="sticky">
-					<p>Click on your target:</p>
-					<a href="javascript:void(0);" onclick="javascript:usernameClicked('zhaar');">zhaar</a><br>
-					<a href="javascript:void(0);" onclick="javascript:usernameClicked('Thuy-My');">Thuy-My</a><br>
-					<a href="javascript:void(0);" onclick="javascript:usernameClicked('Roldak');">Roldak</a><br>
-					<a href="javascript:void(0);" onclick="javascript:usernameClicked('ounon');">ounon</a><br>
-					<a href="javascript:void(0);" onclick="javascript:usernameClicked('dbnsky');">dbnsky</a><br>
-					<a href="javascript:void(0);" onclick="javascript:usernameClicked('sydneyhauke');">sydneyhauke</a><br>
-					<a href="javascript:void(0);" onclick="javascript:usernameClicked('wasadigi');">wasadigi</a><br>
-					<a href="javascript:void(0);" onclick="javascript:usernameClicked('FredericJacobs');">FredericJacobs</a><br>
-					<a href="javascript:void(0);" onclick="javascript:usernameClicked('odersky');">odersky</a><br>
-					<a href="javascript:void(0);" onclick="javascript:usernameClicked('XTBoris');">XTBoris</a><br><br>
-				</div>
-      <div class="container">
-        <div class="text">
-            <div class="p-5">
-				<h2 class="display-4">Analyze a user</h2> <br>
-				<!-- code was here -->
-					<div class="text"align="center" style="color:#792323;display:none;" id="fineToothComb">
-						<tt>You chose to go over <br>
-						<div class = "p-5" id="chosenUser" style="font-size:180%;color:#56648C"></div><br>
-						with a fine-tooth comb! Here are the result :</tt><br><br><br>
+	
+	<div class="row">
+		<div class="column left" style="background-color:#aaa;">
+			<div class="sticky">
+							<p>Click on your target:</p>
+							<a href="javascript:void(0);" onclick="javascript:usernameClicked('zhaar');">zhaar</a><br>
+							<a href="javascript:void(0);" onclick="javascript:usernameClicked('Thuy-My');">Thuy-My</a><br>
+							<a href="javascript:void(0);" onclick="javascript:usernameClicked('Roldak');">Roldak</a><br>
+							<a href="javascript:void(0);" onclick="javascript:usernameClicked('ounon');">ounon</a><br>
+							<a href="javascript:void(0);" onclick="javascript:usernameClicked('dbnsky');">dbnsky</a><br>
+							<a href="javascript:void(0);" onclick="javascript:usernameClicked('sydneyhauke');">sydneyhauke</a><br>
+							<a href="javascript:void(0);" onclick="javascript:usernameClicked('wasadigi');">wasadigi</a><br>
+							<a href="javascript:void(0);" onclick="javascript:usernameClicked('FredericJacobs');">FredericJacobs</a><br>
+							<a href="javascript:void(0);" onclick="javascript:usernameClicked('odersky');">odersky</a><br>
+							<a href="javascript:void(0);" onclick="javascript:usernameClicked('XTBoris');">XTBoris</a><br><br>
+			</div>
+		</div>
+			
+		<div class="column middle" style="background-color:#bbb;">
+			<div class="container">
+				<div class="text">
+					<div class="p-5">
+						<h2 class="display-4">Analyze a user</h2> <br>
+						<!-- code was here -->
+							<div class="text"align="center" style="color:#792323;display:none;" id="fineToothComb">
+								<tt>You chose to go over <br>
+								<div class = "p-5" id="chosenUser" style="font-size:180%;color:#56648C"></div><br>
+								with a fine-tooth comb! Here are the result :</tt><br><br><br>
+							</div>
+							
+							<canvas id="activityChart" width="500" height="500" align="center"></canvas>
+							<canvas id="languagesChart" width="700" height="700"></canvas>
 					</div>
-					
-					<canvas id="activityChart" width="500" height="500" align="center"></canvas>
-					<canvas id="languagesChart" width="700" height="700"></canvas>
+				</div>
+			</div>
 		</div>
+	
+		<div class="column right" style="background-color:#ccc">
+			<div class="columnContainer" style="background-color:#ddd">
+				<div class="top" style="background-color: #eee">
+					<div class="sticky2">
+						<p>1st Sticky!</p>
+					</div>
+				</div>
+				<div class="bottom" style="background-color: #fff">
+					<div class="sticky3">
+						<p>2nd Sticky!</p>
+					</div>
+				</div>
+			</div>
 		</div>
+	
 	</div>
+	
     </section>
 
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+        <p class="m-0 text-center text-white">Copyright &copy; thuy-my.github.io 2017</p>
       </div>
       <!-- /.container -->
     </footer>
