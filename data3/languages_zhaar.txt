@@ -1,1 +1,1 @@
-Java,JavaScript,Swift,Processing,HTML,Scala,Makefile,Lua,Ruby,CSS,Shell,Vim script
+Java,JavaScript,Swift,Processing,HTML,Scala,Makefile,Lua,Rust,Ruby,CSS,Shell,Vim script
