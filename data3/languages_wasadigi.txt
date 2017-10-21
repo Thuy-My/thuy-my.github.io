@@ -1,1 +1,1 @@
-TypeScript,C++,JavaScript,Java,ApacheConf,Shell,Ruby,HTML,Python,C,CSS,Gherkin
+TypeScript,C++,Java,ApacheConf,JavaScript,Shell,Ruby,HTML,Python,C,CSS,Gherkin
