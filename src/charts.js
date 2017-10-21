@@ -6,8 +6,7 @@ let firstClick = true;
 function usernameClicked(username) {
     document.getElementById("chosenUser").innerHTML = username;
 
-    let elements = document.querySelectorAll('.sticky');
-    Stickyfill.add(elements);
+    document.getElementById("fineToothComb").style.display = "block";
 
     drawMostActiveRepoChart(username);    
     drawLanguagesChart(username);
@@ -29,7 +28,7 @@ function drawMostActiveRepoChart(username) {
     let url = "https://thuy-my.github.io/data/names_" + username +".txt";
     let url2 = "https://thuy-my.github.io/data/values_" + username + ".txt";
 
-    //let url = "http://localhost:4000/data/names_" + username +".txt";
+    //let url = "http://localhost:4000/data/repo_" + username +".txt";
     //let url2 = "http://localhost:4000/data/values_" + username + ".txt";
 
     let namesData;
@@ -193,4 +192,8 @@ function getFile(url, func) {
 
     namesFile.open("GET", url);
     namesFile.send();
+}
+
+function jsonToCSV() {
+
 }
