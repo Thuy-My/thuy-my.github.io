@@ -1,1 +1,1 @@
-Java,C#,JavaScript,CSS,HTML,Shell,GLSL,Scala,Gnuplot,Ruby
+Java,Scala,C#,JavaScript,CSS,HTML,Shell,GLSL,Gnuplot,Ruby
