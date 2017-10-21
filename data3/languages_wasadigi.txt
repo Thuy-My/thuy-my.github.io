@@ -1,1 +1,1 @@
-Ruby,ApacheConf,CSS,JavaScript,Shell,Java,HTML,TypeScript
+Ruby,ApacheConf,Shell,Java,HTML,TypeScript,JavaScript,CSS
