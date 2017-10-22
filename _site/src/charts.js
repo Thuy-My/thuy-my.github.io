@@ -32,9 +32,6 @@ function drawMostActiveRepoChart(username) {
     let url = "https://thuy-my.github.io/data/names_" + username +".txt";
     let url2 = "https://thuy-my.github.io/data/values_" + username + ".txt";
 
-    //let url = "http://localhost:4000/data/names_" + username +".txt";
-    //let url2 = "http://localhost:4000/data/values_" + username + ".txt";
-
     let namesData;
     let valuesData;
 
@@ -58,9 +55,6 @@ function drawLanguagesChart(username) {
 
     let url = "https://thuy-my.github.io/data/languages_" + username +".txt";
     let url2 = "https://thuy-my.github.io/data/languagesValues_" + username + ".txt";
-
-    //let url = "http://localhost:4000/data/languages_" + username +".txt";
-    //let url2 = "http://localhost:4000/data/languagesValues_" + username + ".txt";
 
     let languagesData;
     let valuesData;
