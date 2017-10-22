@@ -288,7 +288,7 @@ function computePercentage(username, names, values) {
     }
 
     document.getElementById("insideSticky3").innerHTML =
-        "<tt> The percentage of each language is the following : <br>" +
+        "<tt> The percentage of each language is the following : <br><br>" +
         "<small>" + namesArray.join() + "</small></tt>";
 
 }
