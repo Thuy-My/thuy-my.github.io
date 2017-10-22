@@ -284,7 +284,7 @@ function computePercentage(username, names, values) {
     let percentage;
     for(let j = 0; j < length; j++) {
         percentage = ((parseInt(valuesArray[j]) * 1.0 / fullPercentage) * 100).toFixed(5);
-        namesArray[j] += " : " + percentage + "<br>";
+        namesArray[j] += " : " + percentage + "%";
     }
 
     document.getElementById("insideSticky3").innerHTML =
