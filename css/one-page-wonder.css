@@ -15,7 +15,7 @@ body {
 }
 
 header.masthead {
-    background: url('https://static.boredpanda.com/blog/wp-content/uploads/2015/04/night-sky-stars-milky-way-photography-32__880.jpg') no-repeat center center scroll;
+    background: url('../image/banner.jpg') no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
