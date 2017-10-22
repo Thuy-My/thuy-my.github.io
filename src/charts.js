@@ -204,11 +204,22 @@ function analyze(username) {
     let url2 = "https://thuy-my.github.io/data/values_" + username + ".txt";
 
     let repoData;
-    let valuesData;
+    let repoValues;
 
     getFile(url, (repoData) => {
-        getFile(url2, (valuesData) => {
-            computeMedian(username, repoData, valuesData);
+        getFile(url2, (repoValues) => {
+            computeMedian(username, repoData, repoValues);
+        })
+    });
+
+    let url3 = "https://thuy-my.github.io/data/languages_" + username +".txt";
+    let url4 = "https://thuy-my.github.io/data/languagesValues_" + username + ".txt";
+
+    let languagesData;
+    let languagesValues;
+    getFile(url3, (languagesData) => {
+        getFile(url4, (languagesValues) => {
+            computePercentage(username, languagesData, languagesValues);
         })
     });
 
@@ -236,7 +247,7 @@ function computeMedian(username, names, values) {
         index++;
     }
 
-    let average = (totalCommits * 1.0 / length).toFixed(2);    // The theorical commits per repository 
+    let average = (totalCommits * 1.0 / length).toFixed(2);    // The theorical number of commits per repository 
     
     /* Get the names of the very most commited repos */
     let mostActiveRepos = [];
@@ -245,8 +256,39 @@ function computeMedian(username, names, values) {
     }
 
     document.getElementById("insideSticky2").innerHTML =
-         "<tt>" + username + " has " + length + " repositories with a total commits count of " + totalCommits + ".<br>" +
-         "The average number of commits per repository would be " + average + ". " +
-         "But the first " + index + " repositories contains more commits than all the others combined! " +
-         "His/her first " + index + " repositories (which are : " + mostActiveRepos.join() + ") must be dear to his/her heart. :)</tt>" ;   
+         "<tt>" + username + " has " + length + " (public) repositories with a total commits count of " + totalCommits + ".<br>" +
+         "The average number of commits per repository would be " + average + ".</tt>";   
+    
+    /* To manage singular and plural sentences */
+    if(index == 1) {
+        document.getElementById("insideSticky2_2").innerHTML = 
+            "<tt>But the first " + index + " repository contains more commits than all the others combined! " +
+            "His/her first " + index + " repository (which is : " + mostActiveRepos.join() + ") must be dear to his/her heart. :)</tt>";
+    } else {
+        document.getElementById("insideSticky2_2").innerHTML = 
+        "<tt>But the first " + index + " repositories contains more commits than all the others combined! " +
+        "His/her first " + index + " repositories (which are : " + mostActiveRepos.join() + ") must be dear to his/her heart. :)</tt>";
+    }
+}
+
+function computePercentage(username, names, values) {
+    let namesArray = names.split(',');
+    let valuesArray = values.split(',');
+    let length = valuesArray.length;
+
+    let fullPercentage = 0.0;
+    for(let i = 0; i < length; i++) {
+        fullPercentage += parseInt(valuesArray[i]);
+    }
+    
+    let percentage;
+    for(let j = 0; j < length; j++) {
+        percentage = ((parseInt(valuesArray[j]) * 1.0 / fullPercentage) * 100).toFixed(5);
+        namesArray[j] += " : " + percentage + "<br>";
+    }
+
+    document.getElementById("insideSticky3").innerHTML =
+        "<tt> The percentage of each language is the following : <br>" +
+        "<small>" + namesArray.join() + "</small></tt>";
+
 }
