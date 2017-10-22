@@ -150,6 +150,16 @@ function drawDoughnutChart(labelsFile, valuesFile, label, ctx, canvasName) {
         bColor.push('rgba(' + r + ", " + g + ", " + b + ", 1");
     }
 
+    /* To compute each language percentage */
+    let fullPercentage = 0.0;
+    for(let j = 0; j < values.length; j++) {
+        fullPercentage += parseInt(values[j]);
+    }
+
+    for(let k = 0; k < values.length; k++) {
+        values[k] = ((parseInt(values[k]) * 1.0 / fullPercentage) * 100).toFixed(3);
+    }
+
     let doughnutChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
@@ -208,7 +218,7 @@ function analyze(username) {
 
     getFile(url, (repoData) => {
         getFile(url2, (repoValues) => {
-            computeMedian(username, repoData, repoValues);
+            computeMedian(username, repoData, repoValues, "repos");
         })
     });
 
@@ -219,13 +229,13 @@ function analyze(username) {
     let languagesValues;
     getFile(url3, (languagesData) => {
         getFile(url4, (languagesValues) => {
-            computePercentage(username, languagesData, languagesValues);
+            computeMedian(username, languagesData, languagesValues, "languages");
         })
     });
 
 }
 
-function computeMedian(username, names, values) {
+function computeMedian(username, names, values, choice) {
     let namesArray = names.split(',');
     let valuesArray = values.split(',');
 
@@ -250,45 +260,43 @@ function computeMedian(username, names, values) {
     let average = (totalCommits * 1.0 / length).toFixed(2);    // The theorical number of commits per repository 
     
     /* Get the names of the very most commited repos */
-    let mostActiveRepos = [];
+    let topMost = [];
     for(let j = 0; j < index; j++) {
-        mostActiveRepos.push(namesArray[j]);
+        topMost.push(namesArray[j]);
     }
 
-    document.getElementById("insideSticky2").innerHTML =
-         "<tt>" + username + " has " + length + " (public) repositories with a total commits count of " + totalCommits + ".<br>" +
-         "The average number of commits per repository would be " + average + ".</tt>";   
-    
-    /* To manage singular and plural sentences */
-    if(index == 1) {
-        document.getElementById("insideSticky2_2").innerHTML = 
-            "<tt>But the first " + index + " repository contains more commits than all the others combined! " +
-            "His/her first " + index + " repository (which is : " + mostActiveRepos.join() + ") must be dear to his/her heart. :)</tt>";
-    } else {
-        document.getElementById("insideSticky2_2").innerHTML = 
-        "<tt>But the first " + index + " repositories contains more commits than all the others combined! " +
-        "His/her first " + index + " repositories (which are : " + mostActiveRepos.join() + ") must be dear to his/her heart. :)</tt>";
+    if(choice == "repos") {
+
+        document.getElementById("insideSticky2").innerHTML =
+            "<tt>" + username + " has " + length + " (public) repositories with a total commits count of " + totalCommits + ".<br>" +
+            "The average number of commits per repository would be " + average + ".</tt>";   
+        
+        /* To manage singular and plural sentences */
+        if(index == 1) {
+            document.getElementById("insideSticky2_2").innerHTML = 
+                "<tt>But the first " + index + " repository contains more commits than all the others combined! " +
+                "His/her first " + index + " repository (which is : " + topMost.join() + ") must be dear to his/her heart. :)</tt>";
+        } else {
+            document.getElementById("insideSticky2_2").innerHTML = 
+                "<tt>But the first " + index + " repositories contains more commits than all the others combined! " +
+                "His/her first " + index + " repositories (which are : " + topMost.join() + ") must be dear to his/her heart. :)</tt>";
+        }
+
+    } else if(choice == "languages") {
+
+        document.getElementById("insideSticky3").innerHTML = 
+            "<tt><small><i>Note : The adjacent chart values are represented in percentage.</i></small><br><br>"; 
+
+        if(index == 1) {
+            document.getElementById("insideSticky3_2").innerHTML =
+                "<tt>" + username + " must be a monoglot! He/She has used " + index + " language (" + topMost.join() + ") more than the rest of them combined. " +
+                "Maybe someone should tell him/her to pay more attention to the other languages too, it is nice to be a polyglot. :D</tt>";
+        } else {
+            document.getElementById("insideSticky3_2").innerHTML =
+                "<tt> Seeing those results, " + username + " must be a polyglot! He/She has used " + index + " languages (" + topMost.join() + ") more " +
+                "than the rest of them combined. Kudos!</tt>";
+        }
+
     }
 }
 
-function computePercentage(username, names, values) {
-    let namesArray = names.split(',');
-    let valuesArray = values.split(',');
-    let length = valuesArray.length;
-
-    let fullPercentage = 0.0;
-    for(let i = 0; i < length; i++) {
-        fullPercentage += parseInt(valuesArray[i]);
-    }
-    
-    let percentage;
-    for(let j = 0; j < length; j++) {
-        percentage = ((parseInt(valuesArray[j]) * 1.0 / fullPercentage) * 100).toFixed(5);
-        namesArray[j] += " : " + percentage + "%";
-    }
-
-    document.getElementById("insideSticky3").innerHTML =
-        "<tt> The percentage of each language is the following : <br><br>" +
-        "<small>" + namesArray.join() + "</small></tt>";
-
-}
