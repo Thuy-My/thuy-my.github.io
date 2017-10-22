@@ -236,7 +236,7 @@ function computeMedian(username, names, values) {
         index++;
     }
 
-    let average = totalCommits * 1.0 / length;    // The theorical commits per repository 
+    let average = (totalCommits * 1.0 / length).toFixed(2);    // The theorical commits per repository 
     
     /* Get the names of the very most commited repos */
     let mostActiveRepos = [];
@@ -246,7 +246,7 @@ function computeMedian(username, names, values) {
 
     document.getElementById("insideSticky2").innerHTML =
          "<tt>" + username + " has " + length + " repositories with a total commits count of " + totalCommits + ".<br>" +
-         "The average number of commits per repository would be " + average + "." +
-         "But the first " + index + " repositories contains more commits than all the others combined!" +
+         "The average number of commits per repository would be " + average + ". " +
+         "But the first " + index + " repositories contains more commits than all the others combined! " +
          "His/her first " + index + " repositories (which are : " + mostActiveRepos.join() + ") must be dear to his/her heart. :)</tt>" ;   
 }
