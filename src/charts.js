@@ -268,11 +268,11 @@ function computeMedian(username, names, values, choice) {
         /* To manage singular and plural sentences */
         if(index == 1) {
             document.getElementById("insideSticky2_2").innerHTML = 
-                "<tt>But the first " + index + " repository contains more commits than all the others combined! " +
+                "<tt>But the first repository contains more commits than all the others combined! " +
                 "His/her first " + index + " repository (which is : " + topMost.join() + ") must be dear to his/her heart. :)</tt>";
         } else {
             document.getElementById("insideSticky2_2").innerHTML = 
-                "<tt>But the first " + index + " repositories contains more commits than all the others combined! " +
+                "<tt>But the first " + index + " repositories contain more commits than all the others combined! " +
                 "His/her first " + index + " repositories (which are : " + topMost.join() + ") must be dear to his/her heart. :)</tt>";
         }
 
