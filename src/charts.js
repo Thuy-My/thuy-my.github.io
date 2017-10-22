@@ -236,7 +236,7 @@ function computeMedian(username, names, values) {
         index++;
     }
 
-    let average = length * 1.0 / totalCommits;    // The theorical commits per repository 
+    let average = totalCommits * 1.0 / length;    // The theorical commits per repository 
     
     /* Get the names of the very most commited repos */
     let mostActiveRepos = [];
