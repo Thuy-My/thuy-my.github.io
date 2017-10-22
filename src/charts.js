@@ -1,3 +1,5 @@
+const analysis = require('./analysis.js');
+
 let currChart;
 let currChart2;
 let firstClick = true;
@@ -6,12 +8,15 @@ let firstClick = true;
 function usernameClicked(username) {
     document.getElementById("chosenUser").innerHTML = username;
 
+    /* Set all the following objects to be visible */
     document.getElementById("fineToothComb").style.display = "block";
     document.getElementById("sticky2").style.display = "block";
     document.getElementById("sticky3").style.display = "block";
 
     drawMostActiveRepoChart(username);    
     drawLanguagesChart(username);
+
+    analysis.analyze(username);
 
     return false;
 }
