@@ -1,8 +1,5 @@
-const analysis = require('./analysis.js');
-
 let currChart;
 let currChart2;
-let firstClick = true;
 
 /* Function called when a username has been clicked */
 function usernameClicked(username) {
@@ -16,7 +13,7 @@ function usernameClicked(username) {
     drawMostActiveRepoChart(username);    
     drawLanguagesChart(username);
 
-    analysis.analyze(username);
+    analyze(username);
 
     return false;
 }
@@ -35,7 +32,7 @@ function drawMostActiveRepoChart(username) {
     let url = "https://thuy-my.github.io/data/names_" + username +".txt";
     let url2 = "https://thuy-my.github.io/data/values_" + username + ".txt";
 
-    //let url = "http://localhost:4000/data/repo_" + username +".txt";
+    //let url = "http://localhost:4000/data/names_" + username +".txt";
     //let url2 = "http://localhost:4000/data/values_" + username + ".txt";
 
     let namesData;
@@ -201,6 +198,55 @@ function getFile(url, func) {
     namesFile.send();
 }
 
-function jsonToCSV() {
+function analyze(username) {
 
+    let url = "https://thuy-my.github.io/data/names_" + username +".txt";
+    let url2 = "https://thuy-my.github.io/data/values_" + username + ".txt";
+
+    let repoData;
+    let valuesData;
+
+    getFile(url, (repoData) => {
+        getFile(url2, (valuesData) => {
+            computeMedian(username, repoData, valuesData);
+        })
+    });
+
+}
+
+function computeMedian(username, names, values) {
+    let namesArray = names.split(',');
+    let valuesArray = values.split(',');
+
+    let middle = 0.0;
+    let totalCommits = 0;
+    let length = valuesArray.length;
+
+    for(let i = 0; i < length; i++) {
+        middle += parseFloat(valuesArray[i]);
+    }
+
+    totalCommits = middle; // Total commits count
+    middle = Math.ceil(middle / 2);
+    
+    let index = 0;
+    let total = 0.0;
+    while(total < middle) {
+        total += valuesArray[index];
+        index++;
+    }
+
+    let average = length * 1.0 / totalCommits;    // The theorical commits per repository 
+    
+    /* Get the names of the very most commited repos */
+    let mostActiveRepos = [];
+    for(let j = 0; j < index; j++) {
+        mostActiveRepos.push(namesArray[j]);
+    }
+
+    document.getElementById("insideSticky2").innerHTML =
+         "<tt>" + username + " has " + length + " repositories with a total commits count of " + totalCommits + ".<br>" +
+         "The average number of commits per repository would be " + average + "." +
+         "But the first " + index + " repositories contains more commits than all the others combined!" +
+         "His/her first " + index + " repositories (which are : " + mostActiveRepos.join() + ") must be dear to his/her heart. :)</tt>" ;   
 }
