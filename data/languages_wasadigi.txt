@@ -1,1 +1,1 @@
-C++,Java,Ruby,JavaScript,Python,C,Shell,HTML,TypeScript,Gherkin,CSS
+C++,HTML,Groovy,ApacheConf,XSLT,Java,TypeScript,Batchfile,Smarty,JavaScript,Python,FreeMarker,C,Ruby,Shell,Gherkin,CSS
