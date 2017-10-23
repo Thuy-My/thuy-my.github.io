@@ -1,1 +1,1 @@
-bli,ML_course,neuro-1
+bli,neuro-1
