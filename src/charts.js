@@ -204,8 +204,8 @@ function getFile(url, func) {
 
 function analyze(username) {
 
-    let url = "https://thuy-my.github.io/data/names_" + username +".txt";
-    let url2 = "https://thuy-my.github.io/data/values_" + username + ".txt";
+    let url = "https://thuy-my.github.io/data/repo_" + username +".txt";
+    let url2 = "https://thuy-my.github.io/data/repoValues_" + username + ".txt";
 
     let repoData;
     let repoValues;
