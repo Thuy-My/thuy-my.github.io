@@ -1,1 +1,1 @@
-netbeans-wakatime,scroll_demo,MyGitSandbox,Teaching-COMEM-MWS,SEA-SampleWebApp,jekyllDemonstration,dygraphs-dynamiczooming-example,myHerokuApp,amt-coolapp
+netbeans-wakatime,generator-angm,Nobitsgram,scroll_demo,MyGitSandbox,ani-theme,javaee-template,HEIG.TWEB.Project02,play2bars,Teaching-COMEM-MWS,playground-elasticsearch,LotarisTechDays2012,Smart-Calculator,SEA-SampleWebApp,kafka-node,jekyllDemonstration,dygraphs-dynamiczooming-example,atlas-packer-vagrant-tutorial,Samba,ng2-admin,amt-coolapp,docker-event-processing,chainlink,packer-templates,myHerokuApp,my-first-book
