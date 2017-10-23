@@ -1,1 +1,1 @@
-scalax,sips,collection-strawman
+scalax,sips,collection-strawman,legacy-svn-scala
