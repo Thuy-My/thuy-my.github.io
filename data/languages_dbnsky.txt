@@ -1,1 +1,1 @@
-JavaScript,Java,Shell
+Java,TeX,JavaScript,Shell
