@@ -1,1 +1,1 @@
-JavaScript,HTML,Java,CSS
+JavaScript,HTML,Java,TeX,CSS,Shell
