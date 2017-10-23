@@ -1,1 +1,1 @@
-Jupyter Notebook,TeX,C++,Makefile,Python,Matlab,CMake
+C++,Makefile,Matlab,CMake
