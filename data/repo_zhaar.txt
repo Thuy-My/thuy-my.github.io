@@ -1,1 +1,1 @@
-EpicGameJam-Swift,lud-books,zhaar.github.io
+visual-comp,Hackerspaces-iOS,CS-250-implementations,EpicGameJam-Swift,myPlant-iOS,Lisp-interpreter,Neuralnet-IoT-Car,zhaar.github.io,truth.js
