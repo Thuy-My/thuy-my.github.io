@@ -1,1 +1,1 @@
-netbeans-wakatime,Nobitsgram,ani-theme,javaee-template,Teaching-COMEM-MWS,LotarisTechDays2012,Smart-Calculator,chainlink,my-first-book
+ani-theme,Teaching-COMEM-MWS,LotarisTechDays2012,Samba
