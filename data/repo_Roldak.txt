@@ -1,1 +1,1 @@
-SFSL,welder,ScastieWelder,PlanetGeneration,mb-vector,sweng-test-exam
+welder,mb-benchmarks,mb-hashmap,mb-vector
