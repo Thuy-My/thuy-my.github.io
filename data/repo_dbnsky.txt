@@ -1,1 +1,1 @@
-test2,testJS,Teaching-HEIGVD-RES-2017-Labo-01,test
+testJS,Teaching-HEIGVD-RES-2017-Labo-DockerMusic
