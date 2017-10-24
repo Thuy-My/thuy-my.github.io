@@ -1,1 +1,1 @@
-welder,IPW,PlanetGeneration,mb-benchmarks,miniboxing-plugin
+SFSL,welder,PlanetGeneration,SemesterProject2015,mb-hashmap,sweng-test-exam,miniboxing-plugin,roldak.github.io,dotty
