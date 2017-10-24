@@ -1,1 +1,1 @@
-fredericjacobs.github.io,25519,ArchOrd-Labos,Cryptography-Stanford-Notes,crypto-might-not-suck,EPFL-DigitalPhotography,EPFL-SOP,chvote-1-0,fudge,bitcode_retriever,FJKit,Angry-Syrians,Crypto-for-CS-students,emesa,FinFishMetadata,Exoscale-PGP-Uploads,AsyncMessagesViewController,gephi,DeepPacketLove,Fragile_Oasis,EasyBGP,cryptic,departure-board,app,edCurve25519,ECC2015-Notes
+25519,chvote-1-0,fudge,Angry-Syrians,FinFishMetadata,Crypto-for-CS-students,emesa,DeepPacketLove,Fragile_Oasis,ECC2015-Notes,gephi
