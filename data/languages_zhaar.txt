@@ -1,1 +1,1 @@
-Java,Vim script,JavaScript,Perl,Emacs Lisp,AppleScript,Lua,Python,TeX,Haskell,PHP,Ruby,Swift,C,CSS,Shell,HTML
+C++,Python,CMake,Objective-C,Objective-C++,Shell,LLVM,Emacs Lisp,C,Scala,Vim script,Swift,DTrace,Lua,Perl,Assembly,Ruby,Makefile,HTML
