@@ -1,1 +1,1 @@
-Ruby,Java,HTML,JavaScript,CSS
+C++,HTML,Java,JavaScript,Python,C,Shell,CSS
