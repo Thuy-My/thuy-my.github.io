@@ -1,1 +1,1 @@
-testJS,Teaching-HEIGVD-RES-2017-Labo-DockerMusic,Teaching-HEIGVD-RES-2017-Labo-SMTP,test
+test2,testJS,Teaching-HEIGVD-RES-2017-StPatrickChallenge,Teaching-HEIGVD-RES-2017-Labo-HTTPInfra,Teaching-HEIGVD-RES-2017-Labo-00,test
