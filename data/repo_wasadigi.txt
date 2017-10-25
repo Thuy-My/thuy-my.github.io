@@ -1,1 +1,1 @@
-generator-angm,MyGitSandbox,javaee-template,playground-elasticsearch,Teaching-COMEM-MWS,Smart-Calculator,SEA-SampleWebApp,dygraphs-dynamiczooming-example,amt-coolapp,jekyllDemonstration,packer-templates
+netbeans-wakatime,Nobitsgram,ani-theme,javaee-template,HEIG.TWEB.Project02,Teaching-COMEM-MWS,playground-elasticsearch,LotarisTechDays2012,SEA-SampleWebApp,my-first-book,atlas-packer-vagrant-tutorial,Samba,docker-event-processing,myHerokuApp,kafka-node,dygraphs-dynamiczooming-example,jekyllDemonstration,angular2-webpack-starter
