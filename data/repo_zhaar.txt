@@ -1,1 +1,1 @@
-ggj2014,EpicGameJam-Swift,game-pde,myPlant-iOS,lud-books,Neuralnet-IoT-Car,jsGo-scala,zhaar.github.io,truth.js
+ggj2014,EpicGameJam-Swift,lud-books,zhaar.github.io
