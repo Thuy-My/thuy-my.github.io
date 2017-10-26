@@ -1,1 +1,1 @@
-C++,TeX,Scala,C#,Shell,CMake,GLSL,Java,CSS,C,Makefile
+C++,TeX,Scala,CSS,C#,HTML,CMake,GLSL,Shell,Java,C,Makefile
