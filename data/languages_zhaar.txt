@@ -1,1 +1,1 @@
-Rust,HTML
+C++,Python,CMake,Objective-C,Objective-C++,Shell,LLVM,Emacs Lisp,Java,C,Scala,Vim script,Swift,Processing,AppleScript,DTrace,Lua,Rust,Perl,Assembly,Ruby,Makefile,TeX,Haskell,PHP,CSS,JavaScript,HTML
