@@ -1,1 +1,1 @@
-visual-comp,ggj2014,CS-250-implementations,EpicGameJam-Swift,game-pde,SongMap,myPlant-iOS,Lisp-interpreter,lud-books,dotfiles,nice-lang,Rayzer,Neuralnet-IoT-Car,jsGo-scala,zhaar.github.io,truth.js
+visual-comp,Hackerspaces-iOS,ggj2014,CS-250-implementations,EpicGameJam-Swift,SongMap,game-pde,myPlant-iOS,Lisp-interpreter,dotfiles,nice-lang,Neuralnet-IoT-Car,zhaar.github.io,jsGo-scala,BrightFutures,truth.js
