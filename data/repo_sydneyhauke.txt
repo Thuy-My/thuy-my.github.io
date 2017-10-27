@@ -1,1 +1,1 @@
-concurrency_monitor,Teaching-HEIGVD-RES-2017-StPatrickChallenge,HEIGVD-RES-Labo3,Solder-Time-2
+Teaching-HEIGVD-RES-2017-StPatrickChallenge,CS11_Project
