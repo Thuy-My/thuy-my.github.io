@@ -1,1 +1,1 @@
-Hackerspaces-iOS,CS-250-implementations,EpicGameJam-Swift,SongMap,lud-books,nice-lang,Rayzer,zhaar.github.io,truth.js
+visual-comp,ggj2014,CS-250-implementations,EpicGameJam-Swift,game-pde,SongMap,myPlant-iOS,Lisp-interpreter,lud-books,dotfiles,nice-lang,Rayzer,Neuralnet-IoT-Car,jsGo-scala,zhaar.github.io,truth.js
