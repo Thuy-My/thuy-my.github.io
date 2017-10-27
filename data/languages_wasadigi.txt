@@ -1,1 +1,1 @@
-JavaScript,Java,TypeScript,CSS,Shell,HTML,Gherkin
+JavaScript,C++,TypeScript,Shell,Ruby,CSS,Python,C,HTML,Java
