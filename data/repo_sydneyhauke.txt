@@ -1,1 +1,1 @@
-Teaching-HEIGVD-RES-2017-Labo-01,Teaching-HEIGVD-RES-2017-StPatrickChallenge,Solder-Time-2
+concurrency_monitor,Teaching-HEIGVD-RES-2017-Labo-SMTP,Teaching-HEIGVD-RES-2017-StPatrickChallenge,HEIGVD-RES-Labo3,gitbook-plugin-OA,Teaching-HEIGVD-RES-2017-Labo-DockerMusic,CS11_Project,Solder-Time-2
