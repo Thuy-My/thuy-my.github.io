@@ -1,1 +1,1 @@
-JavaScript,ApacheConf,TypeScript,CSS,HTML,Java
+JavaScript,C++,TypeScript,Shell,Ruby,CSS,Python,C,HTML
