@@ -1,1 +1,1 @@
-C++,Python,CMake,Objective-C,Objective-C++,Java,LLVM,Emacs Lisp,C,JavaScript,Processing,Vim script,Scala,Makefile,AppleScript,DTrace,Lua,Rust,Perl,Assembly,Ruby,TeX,Haskell,PHP,CSS,Shell,Swift,HTML
+Java,Vim script,JavaScript,Scala,Perl,Emacs Lisp,Makefile,AppleScript,Lua,Rust,Python,TeX,Haskell,PHP,Ruby,C,CSS,Shell,Swift,HTML
