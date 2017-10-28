@@ -1,1 +1,1 @@
-C,TeX,Java,JavaScript,Shell,Objective-C
+JavaScript,TeX,Java,Shell
