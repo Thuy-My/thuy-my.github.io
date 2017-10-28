@@ -1,1 +1,1 @@
-Hackerspaces-iOS,ggj2014,CS-250-implementations,game-pde,myPlant-iOS,lud-books,Lisp-interpreter,dotfiles,Rayzer,Neuralnet-IoT-Car,jsGo-scala,BrightFutures,zhaar.github.io,truth.js
+visual-comp,ggj2014,CS-250-implementations,SongMap,lud-books,dotfiles,Neuralnet-IoT-Car,jsGo-scala,zhaar.github.io,truth.js
