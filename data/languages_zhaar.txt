@@ -1,1 +1,1 @@
-Swift,Java,Processing,Perl,Scala,Emacs Lisp,AppleScript,Lua,Shell,Rust,Python,TeX,Haskell,PHP,Ruby,C,CSS,JavaScript,Vim script,HTML
+Vim script,Scala,Perl,Shell,Emacs Lisp,AppleScript,Python,TeX,Haskell,PHP,Ruby,C,JavaScript,Java,HTML
