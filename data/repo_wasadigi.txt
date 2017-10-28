@@ -1,1 +1,1 @@
-netbeans-wakatime,Nobitsgram,scroll_demo,MyGitSandbox,ani-theme,javaee-template,play2bars,LotarisTechDays2012,Smart-Calculator,tag-trends,SEA-SampleWebApp,amt-coolapp,dygraphs-dynamiczooming-example,my-first-book,Samba,spring-boot
+netbeans-wakatime,HEIG.TWEB.Project02,SEA-SampleWebApp,tag-trends
