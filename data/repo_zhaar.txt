@@ -1,1 +1,1 @@
-visual-comp,ggj2014,CS-250-implementations,SongMap,lud-books,dotfiles,Neuralnet-IoT-Car,jsGo-scala,zhaar.github.io,truth.js
+zhaar.github.io,truth.js
