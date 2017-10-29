@@ -1,1 +1,1 @@
-Vim script,Scala,Perl,Shell,Emacs Lisp,AppleScript,Python,TeX,Haskell,PHP,Ruby,C,JavaScript,Java,HTML
+Swift,Scala,Lua,Shell,Rust,Ruby,Vim script,HTML
