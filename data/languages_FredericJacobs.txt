@@ -1,1 +1,1 @@
-Java,VHDL,Vim script,Tcl,Groovy,Go,HTML,Assembly,C,Python,Shell,Inno Setup,CSS,Scilab,JavaScript,Perl,ApacheConf,Makefile,HCL,C++,Standard ML,Batchfile,Nu
+Java,C,Objective-C,Vim script,Go,HTML,Swift,Matlab,TeX,CSS,Python,Shell,Inno Setup,Perl,C++,JavaScript,Ruby,ApacheConf,Makefile,HCL
