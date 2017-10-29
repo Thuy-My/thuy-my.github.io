@@ -1,1 +1,1 @@
-visual-comp,CS-250-implementations,SongMap,myPlant-iOS,Lisp-interpreter,nice-lang,Rayzer,zhaar.github.io,truth.js,solarized
+visual-comp,ggj2014,SongMap,lud-books,Lisp-interpreter,nice-lang,zhaar.github.io
