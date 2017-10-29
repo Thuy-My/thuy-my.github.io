@@ -1,1 +1,1 @@
-SFSL,welder,ScastieWelder,SemesterProject2015,mb-vector,sweng-test-exam,roldak.github.io
+welder,ScastieWelder,mb-vector
