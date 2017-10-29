@@ -1,1 +1,1 @@
-Teaching-Docker-UDP-sensors,Labo0,Teaching-HEIGVD-RES-2016-Labo-HTTPInfra,Labo-BenchmarkIO,GEN-Yahtzee,Teaching-HEIGVD-RES-2016-Labo-DockerMusic,Teaching-HEIGVD-RES-2016-Labo-Caesar
+Teaching-HEIGVD-RES-2016-Labo-HTTPInfra
