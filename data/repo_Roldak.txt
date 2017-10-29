@@ -1,1 +1,1 @@
-SFSL,welder,IPW,ScastieWelder,PlanetGeneration,SemesterProject2015,mb-benchmarks,mb-hashmap,roldak.github.io
+SFSL,welder,ScastieWelder,SemesterProject2015,mb-vector,sweng-test-exam,roldak.github.io
