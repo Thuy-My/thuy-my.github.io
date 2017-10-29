@@ -1,1 +1,1 @@
-C++,C,TeX,Java,Shell,QMake,Objective-C,JavaScript
+C++,C,JavaScript,TeX,Java,Shell,QMake,Objective-C
