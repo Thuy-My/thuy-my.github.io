@@ -1,6 +1,4 @@
-
-
-let chart = dc.barChart("#test"), counter = dc.numberDisplay('\#counter');
+let fluctuationChart = dc.barChart("#fluctuation-chart");
 
 d3.csv("/story/data/data-crashes.csv", function(flights) {
 
@@ -11,20 +9,25 @@ d3.csv("/story/data/data-crashes.csv", function(flights) {
 
     console.log(flights[0]);
 
-    let flight = crossfilter(flights),
-        all = flight.groupAll,
-        date = flight.dimension(function(d) {
-            return d.Date;
-        }),
-        dates = date.group(),//d3.time.day),
-        fatality = flight.dimension(function(d) {
-            return d.Fatalities;
-        }),
-        fatalities = fatality.group(), // ?
-        phase = flight.dimension(function(d) {
-            return d.FlightPhase;
-        }),
-        phases = phase.group();
+    /* Creating crossfilter dimensions and groups */
+
+    let flight = crossfilter(flights);
+    let all = flight.groupAll;
+
+    let date = flight.dimension(function(d) {
+        return d.Date;
+    });
+    let dates = date.group();//d3.time.day),
+
+    let fatality = flight.dimension(function(d) {
+        return d.Fatalities;
+    });
+    let fatalities = fatality.group(); // ?
+
+    let phase = flight.dimension(function(d) {
+        return d.FlightPhase;
+    });
+    let phases = phase.group();
 
     let charts = [
         
