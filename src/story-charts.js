@@ -1,5 +1,6 @@
-let fluctuationChart = dc.barChart("#fluctuation-chart");
 
+let fatalityChart = dc.barChart("#fatality-chart");
+console.log("Hi");
 d3.csv("/story/data/data-crashes.csv", function(flights) {
 
     flights.forEach(function(d) {
@@ -29,7 +30,7 @@ d3.csv("/story/data/data-crashes.csv", function(flights) {
     });
     let phases = phase.group();
 
-    let charts = [
+    /*let charts = [
         
         barChart()
             .dimension(date)
@@ -53,6 +54,32 @@ d3.csv("/story/data/data-crashes.csv", function(flights) {
             .x(d3.scale.linear()
                 .domain(flights.map(function(d) {return d.FlightPhase}))
                 .rangeRound([0, 10 * 15]))
-    ];
+    ];*/
 
-}); 
+    fatalityChart
+        .width(1000)
+        .height(500)
+        .margins({top: 10, right: 50, bottom: 30, left: 40})
+        .dimension(fatality)
+        .group(fatalities)
+        .elasticY(true)
+        .gap(1)
+        .round(dc.round.floor)
+        .alwaysUseRounding(true)
+        .x(d3.scale.linear().domain([-25, 25]))
+        .renderHorizontalGridLines(true)
+        /*.filterPrinter(function (filters) {
+            var filter = filters[0], s = '';
+            s += numberFormat(filter[0]) + '% -> ' + numberFormat(filter[1]) + '%';
+            return s;
+        });*/
+
+        fatalityChart.xAxis().tickFormat(
+            function (v) { return v + '%'; });
+        fatalityChart.yAxis().ticks(5);
+    
+        
+        dc.renderAll(); 
+   
+});
+
