@@ -14,6 +14,9 @@
 
 		<!-- Custom styles for this template -->
 		<link href="css/one-page-wonder.css" rel="stylesheet">
+		
+		<!-- dc.js css -->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.0.2/dc.css"/>
 	</head>
 	
 	<body>
@@ -64,13 +67,22 @@
               <p>
 				blabla...
 				
-				<div id="fatality-chart">
+				<div id="fatality-chart"><span><center><b>Number of flight accidents per number of fatalities</b></center></span></div>
+				<a class='reset'
+				  href='javascript:fatalityChart.filterAll();dc.redrawAll();'
+				  style='visibility: hidden;'>reset</a>
 				
+				<div id='chart'>
+					<span class='reset' style='visibility: hidden;'>
+					  Current filter: <span class='filter'></span>
+					</span>
 				</div>
+				<div id="date-chart"><span><center><b>Number of flight accidents per date</b></center></span></div>
+				<div id="phase-chart"><span><center><b>Number of flight accidents per flight phases</b></center></span></div>
 			  </p>
             </div>
-          <!--</div>-->
         </div>
+          <!--</div>-->
       </div>
     </section>
 
