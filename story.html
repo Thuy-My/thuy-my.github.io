@@ -67,18 +67,34 @@
               <p>
 				blabla...
 				
-				<div id="fatality-chart"><span><center><b>Number of flight accidents per number of fatalities</b></center></span></div>
-				<a class='reset'
-				  href='javascript:fatalityChart.filterAll();dc.redrawAll();'
-				  style='visibility: hidden;'>reset</a>
-				
-				<div id='chart'>
-					<span class='reset' style='visibility: hidden;'>
-					  Current filter: <span class='filter'></span>
+				<div id="fatality-chart">
+					<span>
+						<center>
+							<b>Number of flight accidents per number of fatalities</b>
+							<a class='reset' href='javascript:fatalityChart.filterAll();dc.redrawAll();'>reset</a>
+						</center>
 					</span>
 				</div>
-				<div id="date-chart"><span><center><b>Number of flight accidents per date</b></center></span></div>
-				<div id="phase-chart"><span><center><b>Number of flight accidents per flight phases</b></center></span></div>
+				
+			
+				<div id="date-chart">
+					<span>
+						<center>
+							<b>Number of flight accidents per date</b>
+							<a class='reset' href='javascript:dateChart.filterAll();dc.redrawAll();'>reset</a>
+						</center>
+					</span>
+			    </div>
+				
+				<div id="phase-chart">
+					<span>
+						<center>
+							<b>Number of flight accidents per flight phases </b>
+							<a class='reset' href='javascript:phaseChart.filterAll();dc.redrawAll();'>reset</a>
+						</center>
+				    </span>
+				</div>
+				  
 			  </p>
             </div>
         </div>
