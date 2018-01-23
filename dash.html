@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Bootstrap 3 Admin</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+	</head>
+	<body>
+<!-- header -->
+<div id="top-nav" class="navbar navbar-inverse navbar-static-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Dashboard</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-user"></i> Admin <span class="caret"></span></a>
+                    <ul id="g-account-menu" class="dropdown-menu" role="menu">
+                        <li><a href="#">My Profile</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- /container -->
+</div>
+<!-- /Header -->
+
+<!-- Main -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3">
+            <!-- Left column -->
+            <a href="#"><strong><i class="glyphicon glyphicon-wrench"></i> Tools</strong></a>
+
+            <hr>
+
+            <ul class="nav nav-stacked">
+                <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">Settings <i class="glyphicon glyphicon-chevron-down"></i></a>
+                    <ul class="nav nav-stacked collapse in" id="userMenu">
+                        <li class="active"> <a href="#"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+                        <li><a href="#"><i class="glyphicon glyphicon-exclamation-sign"></i> Rules</a></li>
+                        <li><a href="#"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+
+        
+        </div>
+        <!-- /col-3 -->
+        <div class="col-sm-9">
+
+            <!-- column 2 -->
+            <ul class="list-inline pull-right">
+                <li><a href="#"><i class="glyphicon glyphicon-cog"></i></a></li>
+           
+   
+            </ul>
+            <a href="#"><strong><i class="glyphicon glyphicon-dashboard"></i> My Dashboard</strong></a>
+            <hr>
+
+            <div class="row">
+                <!-- center left-->
+                <div class="col-md-6">
+					<div class="table-responsive">
+                        <div ng-app="ratings" ng-controller="ratingsCtrl"> 
+							<button ng-click="addUser('zhaar');">zhaar</button><br>
+							<button ng-click="addUser('Thuy-My');">Thuy-My</button><br>
+							<button ng-click="addUser('Roldak');">Roldak</button><br>
+							<button ng-click="addUser('ounon');">ounon</button><br>
+							<button ng-click="addUser('dbnsky');">dbnsky</button><br>
+							<button ng-click="addUser('sydneyhauke');">sydneyhauke</button><br>
+							<button ng-click="addUser('wasadigi');">wasadigi</button><br>
+							<button ng-click="addUser('FredericJacobs');">FredericJacobs</button><br>
+							<button ng-click="addUser('odersky');">odersky</button><br>
+							<button ng-click="addUser('XTBoris');">XTBoris</button><br>
+							<br><br><br>
+							<button ng-click="addAll();">Show ratings!</button><br>
+							<table>
+					  
+					</table>
+					<div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4>Rating</h4></div>
+                        <div ng-model="obj" class="panel-body">
+							
+							<ul ng-repeat="x in rating">
+								<li	ng-repeat="user in x" | orderBy : '-value'">
+									{{user.name}}
+									<div class="progress progress-striped active">
+										<div ng-style="{width : ( user.value + '%' ) }" aria-valuemax="100" aria-valuemin="0" aria-valuenow="{{user.value}}" role="progressbar" class="progress-bar">{{user.value}}
+									</div>
+								</li>
+							</ul>
+                        </div>
+                        <!--/panel-body-->
+                    </div>
+                    <!--/panel-->
+				
+                    </div>
+					
+					
+
+                    
+
+                    <hr>
+
+                    
+                </div>
+			</div>
+                <!--/col-->
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4>Notices</h4></div>
+                        <div class="panel-body">
+                            <div class="alert alert-info">
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                This is a dismissable alert.. just sayin'.
+                            </div>
+                            <p>This is a dashboard-style layout that uses Bootstrap 3. You can use this template as a starting point to create something more unique.</p>
+                            <p>Visit the Bootstrap Playground at <a href="http://bootply.com">Bootply</a> to tweak this layout or discover more useful code snippets.</p>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <!--/col-span-6-->
+
+            </div>
+            <!--/row-->
+
+            
+        </div>
+        <!--/col-span-9-->
+    </div>
+</div>
+<!-- /Main -->
+
+<footer class="text-center">This Bootstrap 3 dashboard layout is compliments of <a href="http://www.bootply.com/85850"><strong>Bootply.com</strong></a></footer>
+
+
+<!-- /.modal -->
+	<!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/scripts.js"></script>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>-->
+		
+		<script src="/src/charts.js"></script>
+		<script src="/gamification/gamification.js"></script>
+	</body>
+</html>
